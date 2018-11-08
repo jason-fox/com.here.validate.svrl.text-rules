@@ -1,0 +1,14 @@
+site_name: Spelling and Grammar Checker Plug-in
+
+repo_url: https://github.com/jason-fox/com.here.validate.svrl.text-rules
+repo_name: GitHub
+
+pages:
+    -  Home: index.md
+    - 'Install' : 'install.md'
+    - 'Usage' : 'usage.md'
+    - 'Configuration' : 'configuration.md'
+    - 'Error Messages' : 'error-messages.md'
+
+theme: readthedocs
+extra_css: ["https://jason-fox.github.io/com.here.validate.svrl.text-rules/dita.css"]
