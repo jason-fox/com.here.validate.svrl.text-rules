@@ -1,3 +1,5 @@
+<h1>Usage</h1>
+
 Spell-checking a document from the command line
 -----------------------------------------------
 

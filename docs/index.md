@@ -1,4 +1,6 @@
-The Spelling and Grammar Checker plug-in for DITA OT  is an  **extension**  of the base [DITA Validator](https://github.com/jason-fox/com.here.validate.svrl) which adds simple rule-based **spelling and grammar** validation for the text elements within DITA documents.
+<h1>Spelling and Grammar Checker plug-in</h1>
+
+The Spelling and Grammar Checker plug-in for DITA OT  is an  **extension**  of the base [DITA Validator](https://jason-fox.github.io/com.here.validate.svrl) which adds simple rule-based **spelling and grammar** validation for the text elements within DITA documents.
 
 The plug-in supports three `transtypes`:
 
