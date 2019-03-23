@@ -1,11 +1,9 @@
 # Spelling and Grammar Checker Plug-in for DITA-OT
 
 [![license](https://img.shields.io/github/license/jason-fox/com.here.validate.svrl.text-rules.svg)](http://www.apache.org/licenses/LICENSE-2.0)
-[![DITA-OT 3.2](https://img.shields.io/badge/DITA--OT-3.2-blue.svg)](http://www.dita-ot.org/3.2)
-[![DITA-OT 2.5](https://img.shields.io/badge/DITA--OT-2.5-green.svg)](http://www.dita-ot.org/2.5) <br/>
+[![DITA-OT 3.3](https://img.shields.io/badge/DITA--OT-3.3-blue.svg)](http://www.dita-ot.org/3.3) <br/>
 [![Build Status](https://travis-ci.org/jason-fox/com.here.validate.svrl.text-rules.svg?branch=master)](https://travis-ci.org/jason-fox/com.here.validate.svrl.text-rules)
 [![Coverage Status](https://coveralls.io/repos/github/jason-fox/com.here.validate.svrl.text-rules/badge.svg?branch=master)](https://coveralls.io/github/jason-fox/com.here.validate.svrl.text-rules?branch=master)
-[![Documentation Status](https://readthedocs.org/projects/textlintdita-ot/badge/?version=latest)](https://textlintdita-ot.rtfd.io)
 
 The Spelling and Grammar Checker plug-in for DITA OT is an **extension** of the base
 [DITA Validator](https://github.com/jason-fox/com.here.validate.svrl) which adds simple rule-based **spelling and
@@ -53,9 +51,9 @@ positives should occur, but the existing list will never be fully comprehensive.
 
 # Install
 
-The validator has been tested against [DITA-OT 3.x](http://www.dita-ot.org/download). It is recommended that you upgrade
-to the latest version. Running the validator plug-in against DITA-OT 1.8.5 or earlier versions of DITA-OT will not work
-as it uses the newer `getVariable` template. To work with DITA-OT 1.8.5 this would need to be refactored to use
+The validator has been tested against [DITA-OT 3.0.x](http://www.dita-ot.org/download). It is recommended that you
+upgrade to the latest version. Running the validator plug-in against DITA-OT 1.8.5 or earlier versions of DITA-OT will
+not work as it uses the newer `getVariable` template. To work with DITA-OT 1.8.5 this would need to be refactored to use
 `getMessage`. The validator can also be run safely against DITA-OT 2.x.
 
 ## Installing DITA-OT
@@ -63,20 +61,19 @@ as it uses the newer `getVariable` template. To work with DITA-OT 1.8.5 this wou
 The spell-checker is a plug-in for the DITA open toolkit. Futhermore, it is not a stand alone plug-in as it extends the
 **base validator plug-in** ([`com.here.validate.svrl`](https://github.com/jason-fox/com.here.validate.svrl)).
 
--   Full installation instructions for downloading DITA-OT can be found
-    [here](https://www.dita-ot.org/3.2/topics/installing-client.html).
+-   install the DITA-OT distribution JAR file dependencies by running `gradle install` from your clone of the
+    [DITA-OT repository](https://github.com/dita-ot/dita-ot).
 
-        1.  Download the `dita-ot-3.2.zip` package from the project website at [dita-ot.org/download](https://www.dita-ot.org/download)
-        2.  Extract the contents of the package to the directory where you want to install DITA-OT.
-        3.  **Optional**: Add the absolute path for the `bin` directory to the _PATH_ system variable.
+The required dependencies are installed to a local Maven repository in your home directory under
+`.m2/repository/org/dita-ot/dost/`.
 
-    This defines the necessary environment variable to run the `dita` command from the command line.
+-   Run the Gradle distribution task to generate the plug-in distribution package:
 
 ```console
-curl -LO https://github.com/dita-ot/dita-ot/releases/download/3.2/dita-ot-3.2.zip
-unzip -q dita-ot-3.2.zip
-rm dita-ot-3.2.zip
+./gradlew dist
 ```
+
+The distribution ZIP file is generated under `build/distributions`.
 
 ## Installing the Base Validator Plug-in
 

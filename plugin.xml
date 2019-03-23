@@ -3,13 +3,8 @@
   This file is part of the Spelling and Grammar Checker project.
   See the accompanying LICENSE file for applicable licenses.
 -->
-<plugin id="com.here.validate.svrl.text-rules">
+<plugin id="com.here.validate.svrl.text-rules" version="3.0.0">
 	<!--
-		Define package details.
-	-->
-	<feature extension="package.version" value="2.0.2"/>
-
-		<!--
 		This plugin is based on and 'extends' the plugin named below.
 	-->
 	<require plugin="com.here.validate.svrl"/>
@@ -48,7 +43,6 @@
 		<param name="text-rules.ruleset.file" desc="Specifies the ruleset file to use." type="file"/>
 	</transtype>
 
-	<!--feature extension="ant.import" file="build_dita2text-rules.xml"/-->
-	<feature extension="dita.conductor.target.relative" file="conductor.xml"/>
-	<template file="build_dita2text-rules_template.xml"/>
+	<feature extension="ant.import" file="build_dita2text-rules.xml"/>
+
 </plugin>

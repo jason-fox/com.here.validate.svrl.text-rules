@@ -19,12 +19,12 @@
 	-->
 	<target name="html" description="build an HTML document">
 		<!-- For Unix run the DITA executable-->
-		<exec executable="${dita.exec}" failonerror="false" osfamily="unix" >
-			<arg value="-input"/>
+		<exec executable="${dita.exec}" failonerror="false" osfamily="unix" resultproperty="dita.ot.result">
+			<arg value="--input"/>
 			<arg value="${args.input}"/>
-			<arg value="-output"/>
+			<arg value="--output"/>
 			<arg value="${dita.dir}/out/html"/>
-			<arg value="-format"/>
+			<arg value="--format"/>
 			<arg value="html5"/>
 			<!-- HTML plugin specific parameters -->
 			<arg value="-Dargs.artlbl=no"/>
@@ -33,10 +33,13 @@
 			<arg value="-Dargs.xhtml.toc=toc"/>
 		</exec>
 		<!-- For Windows run from a DOS command -->
-		<exec executable="cmd" dir="${dita.dir}/bin" failonerror="false" osfamily="windows" outputproperty="dita.ot.output">
+		<exec executable="cmd" dir="${dita.dir}/bin" failonerror="false" osfamily="windows" outputproperty="dita.ot.output" resultproperty="dita.ot.result">
 			<arg value="/C"/>
-			<arg value="dita -input ${args.input} -output ${dita.dir}/out/html -format html5 -Dargs.grammar.cache=yes -Dgenerate-debug-attributes=false -Dargs.artlbl=no -Dargs.csspath=css -Dargs.xhtml.classattr=no -Dargs.xhtml.toc=toc"/>
+			<arg value="dita --input ${args.input} --output ${dita.dir}/out/html --format html5 -Dargs.grammar.cache=yes -Dgenerate-debug-attributes=false -Dargs.artlbl=no -Dargs.csspath=css -Dargs.xhtml.classattr=no -Dargs.xhtml.toc=toc"/>
 		</exec>
+
+		
+
 	</target>
 
 	<!--
@@ -63,6 +66,7 @@
 			<arg value="/C"/>
 			<arg value="dita -input ${args.input} -output ${dita.dir}/out/pdf -format pdf -Dargs.artlbl=no -Dpdf.formatter=fop" />
 		</exec>
+
 	</target>
 
 
@@ -71,7 +75,7 @@
 	-->
 	<target name="spell-check" description="spell-check a document">
 		<!-- For Unix run the DITA executable-->
-		<exec executable="${dita.exec}" osfamily="unix" failonerror="true">
+		<exec taskname="spell-check" executable="${dita.exec}" osfamily="unix" failonerror="true">
 			<arg value="-input"/>
 			<arg value="${args.input}"/>
 			<arg value="-output"/>
@@ -82,10 +86,9 @@
 			<arg value="-Dargs.validate.blacklist=(kilo)?metre|colour|teh|seperate"/>
 			<arg value="-Dargs.validate.check.case=Bluetooth|HTTP[S]? |IoT|JSON|Java|Javadoc|JavaScript|XML"/>
 			<arg value="-Dargs.validate.color=true"/>
-			<arg value="-v"/>
 		</exec>
 		<!-- For Windows run from a DOS command -->
-		<exec dir="${dita.dir}/bin" executable="cmd" osfamily="windows" failonerror="true">
+		<exec taskname="spell-check" dir="${dita.dir}/bin" executable="cmd" osfamily="windows" failonerror="true">
 			<arg value="/C"/>
 			<arg value="dita -input ${args.input} -output ${dita.dir}/out/svrl -format text-rules -Dargs.validate.blacklist=&quot;(kilo)?metre|colour|teh|seperate&quot; -Dargs.validate.check.case=&quot;Bluetooth|HTTP[S]? |IoT|JSON|Java|Javadoc|JavaScript|XML&quot;"/>
 		</exec>
