@@ -1,1 +1,3 @@
 build_dita*.xml linguist-language=Ant Build System
+run-text-rules.xml linguist-language=Ant Build System
+sample/* linguist-vendored
