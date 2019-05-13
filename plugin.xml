@@ -3,7 +3,7 @@
   This file is part of the Spelling and Grammar Checker project.
   See the accompanying LICENSE file for applicable licenses.
 -->
-<plugin id="com.here.validate.svrl.text-rules" version="3.0.0">
+<plugin id="com.here.validate.svrl.text-rules" version="3.1.0">
 	<!--
 		This plugin is based on and 'extends' the plugin named below.
 	-->
@@ -12,7 +12,7 @@
 	<!--
 		Add new value to list of valid transformation type names.
 
-		See also: http://www.dita-ot.org/2.2/dev_ref/plugin-newtranstype.html
+		See also: https://www.dita-ot.org/dev/topics/plugin-newtranstype.html
 	-->
 	<feature extension="dita.conductor.transtype.check" value="auto-correct"/>
 	<feature extension="dita.conductor.transtype.check" value="text-rules"/>

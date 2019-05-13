@@ -20,7 +20,7 @@
 		</dita-ot-echo>
 
 		<tempfile destdir="${dita.temp.dir}" property="auto-correct.xml" suffix=".xml" deleteonexit="true"/>
-		<xslt basedir="${svrl.dir}" style="${dita.plugin.com.here.validate.svrl.text-rules.dir}/xsl/auto-correct-output.xsl" in="${output.dir}/${svrl.filename.root}.svrl" out="${auto-correct.xml}" classpathref="dost.class.path">
+		<xslt basedir="${svrl.dir}" style="${dita.plugin.com.here.validate.svrl.text-rules.dir}/xsl/auto-correct-output.xsl" in="${output.dir}/${svrl.filename.root}.svrl" out="${auto-correct.xml}">
 		</xslt>
 
 		<ant antfile="${auto-correct.xml}">
@@ -49,13 +49,13 @@
 		<tempfile destdir="${dita.temp.dir}" property="punctuation.txt" suffix=".txt" deleteonexit="true"/>
 
 
-		<xslt style="${dita.plugin.com.here.validate.svrl.text-rules.dir}/xsl/dictionary2regex.xsl" in="${text-rules.dictionary.dir}/grammar.xml" out="${grammar.txt}" failOnError="false" classpathref="dost.class.path">
+		<xslt style="${dita.plugin.com.here.validate.svrl.text-rules.dir}/xsl/dictionary2regex.xsl" in="${text-rules.dictionary.dir}/grammar.xml" out="${grammar.txt}" failOnError="false">
 		</xslt>
-		<xslt style="${dita.plugin.com.here.validate.svrl.text-rules.dir}/xsl/dictionary2regex.xsl" in="${text-rules.dictionary.dir}/duplicates.xml" out="${duplicates.txt}" failOnError="false" classpathref="dost.class.path">
+		<xslt style="${dita.plugin.com.here.validate.svrl.text-rules.dir}/xsl/dictionary2regex.xsl" in="${text-rules.dictionary.dir}/duplicates.xml" out="${duplicates.txt}" failOnError="false">
 		</xslt>
-		<xslt style="${dita.plugin.com.here.validate.svrl.text-rules.dir}/xsl/dictionary2regex.xsl" in="${text-rules.dictionary.dir}/spelling.xml" out="${spelling.txt}" failOnError="false" classpathref="dost.class.path">
+		<xslt style="${dita.plugin.com.here.validate.svrl.text-rules.dir}/xsl/dictionary2regex.xsl" in="${text-rules.dictionary.dir}/spelling.xml" out="${spelling.txt}" failOnError="false">
 		</xslt>
-		<xslt style="${dita.plugin.com.here.validate.svrl.text-rules.dir}/xsl/dictionary2regex.xsl" in="${text-rules.dictionary.dir}/punctuation.xml" out="${punctuation.txt}" failOnError="false" classpathref="dost.class.path">
+		<xslt style="${dita.plugin.com.here.validate.svrl.text-rules.dir}/xsl/dictionary2regex.xsl" in="${text-rules.dictionary.dir}/punctuation.xml" out="${punctuation.txt}" failOnError="false">
 			<param name="PREFIX" expression="("/>
 			<param name="POSTFIX" expression=")"/>
 		</xslt>
