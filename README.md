@@ -4,6 +4,7 @@
 [![DITA-OT 3.3](https://img.shields.io/badge/DITA--OT-3.3-blue.svg)](http://www.dita-ot.org/3.3) <br/>
 [![Build Status](https://travis-ci.org/jason-fox/com.here.validate.svrl.text-rules.svg?branch=master)](https://travis-ci.org/jason-fox/com.here.validate.svrl.text-rules)
 [![Coverage Status](https://coveralls.io/repos/github/jason-fox/com.here.validate.svrl.text-rules/badge.svg?branch=master)](https://coveralls.io/github/jason-fox/com.here.validate.svrl.text-rules?branch=master)
+[![Documentation Status](https://readthedocs.org/projects/textlintdita-ot/badge/?version=latest)](https://textlintdita-ot.readthedocs.io/en/latest/?badge=latest)
 
 The Spelling and Grammar Checker plug-in for DITA OT is an **extension** of the base
 [DITA Validator](https://github.com/jason-fox/com.here.validate.svrl) which adds simple rule-based **spelling and
