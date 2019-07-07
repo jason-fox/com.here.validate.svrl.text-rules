@@ -9,15 +9,6 @@
 	-->
 	<require plugin="com.here.validate.svrl"/>
 
-	<!--
-		Add new value to list of valid transformation type names.
-
-		See also: https://www.dita-ot.org/dev/topics/plugin-newtranstype.html
-	-->
-	<feature extension="dita.conductor.transtype.check" value="auto-correct"/>
-	<feature extension="dita.conductor.transtype.check" value="text-rules"/>
-	<feature extension="dita.xsl.strings" file="cfg/common/vars/strings.xml"/>
-
 
 	<!-- Transtype definitions -->
 	<transtype name="auto-correct" abstract="false" extends="svrl"
@@ -43,6 +34,9 @@
 		<param name="text-rules.ruleset.file" desc="Specifies the ruleset file to use." type="file"/>
 	</transtype>
 
+	<!-- Import the text-rules transform's ANT file -->
 	<feature extension="ant.import" file="build_dita2text-rules.xml"/>
+	<!-- Ensure the plugin's error and logging messages are available -->
+	<feature extension="dita.xsl.strings" file="cfg/common/vars/strings.xml"/>
 
 </plugin>
