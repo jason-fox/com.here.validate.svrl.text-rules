@@ -59,6 +59,8 @@ not work as it uses the newer `getVariable` template. To work with DITA-OT 1.8.5
 
 ## Installing DITA-OT
 
+<a href="https://www.dita-ot.org"><img src="https://www.dita-ot.org/images/dita-ot-logo.svg" align="right" height="55"></a>
+
 The spell-checker is a plug-in for the DITA open toolkit. Futhermore, it is not a stand alone plug-in as it extends the
 **base validator plug-in** ([`com.here.validate.svrl`](https://github.com/jason-fox/com.here.validate.svrl)).
 
@@ -94,7 +96,9 @@ dita -install https://github.com/jason-fox/com.here.validate.svrl/archive/master
 dita -install https://github.com/jason-fox/com.here.validate.svrl.text-rules/archive/master.zip
 ```
 
-> The `dita` command line tool requires no additional configuration.
+The `dita` command line tool requires no additional configuration.
+
+---
 
 # Usage
 
