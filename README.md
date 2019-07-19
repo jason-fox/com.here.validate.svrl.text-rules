@@ -80,19 +80,14 @@ unzip -q dita-ot-3.3.zip
 rm dita-ot-3.3.zip
 ```
 
-## Installing the Base Validator Plug-in
-
--   Run the plug-in installation command:
-
-```console
-dita -install https://github.com/jason-fox/com.here.validate.svrl/archive/master.zip
-```
 
 ## Installing the Spelling and Grammar Checker Plug-in
 
--   Run the plug-in installation command:
+-   Run the plug-in installation commands:
 
 ```console
+dita --install https://github.com/doctales/org.doctales.xmltask/archive/master.zip
+dita -install https://github.com/jason-fox/com.here.validate.svrl/archive/master.zip
 dita -install https://github.com/jason-fox/com.here.validate.svrl.text-rules/archive/master.zip
 ```
 
@@ -384,6 +379,6 @@ PRs accepted.
 
 # License
 
-[Apache 2.0](LICENSE) © 2018 HERE Europe B.V.
+[Apache 2.0](LICENSE) © 2018-2019 HERE Europe B.V.
 
 See the [LICENSE](LICENSE) file in the root of this project for license details.
