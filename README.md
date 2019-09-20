@@ -23,11 +23,11 @@ Most of the spell-checking rules are based on a list of
 ruleset can be easily altered to include new constraints. Checking against a list of known errors means that no false
 positives should occur, but the existing list will never be fully comprehensive.
 
-# Table of Contents
+<details>
+<summary><strong>Table of Contents</strong></summary>
 
 -   [Install](#install)
     -   [Installing DITA-OT](#installing-dita-ot)
-    -   [Installing the Base Validator Plug-in](#installing-the-base-validator-plug-in)
     -   [Installing the Spelling and Grammar Checker Plug-in](#installing-the-spelling-and-grammar-checker-plug-in)
 -   [Usage](#usage)
     -   [Spell-checking a document from the command line](#spell-checking-a-document-from-the-command-line)
@@ -49,6 +49,8 @@ positives should occur, but the existing list will never be fully comprehensive.
 -   [Spell-checker Error Messages](#spell-checker-error-messages)
 -   [Contribute](#contribute)
 -   [License](#license)
+
+</details>
 
 # Install
 
