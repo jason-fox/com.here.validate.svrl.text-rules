@@ -52,14 +52,14 @@ positives should occur, but the existing list will never be fully comprehensive.
 
 </details>
 
-# Install
+## Install
 
 The validator has been tested against [DITA-OT 3.0.x](http://www.dita-ot.org/download). It is recommended that you
 upgrade to the latest version. Running the validator plug-in against DITA-OT 1.8.5 or earlier versions of DITA-OT will
 not work as it uses the newer `getVariable` template. To work with DITA-OT 1.8.5 this would need to be refactored to use
 `getMessage`. The validator can also be run safely against DITA-OT 2.x.
 
-## Installing DITA-OT
+### Installing DITA-OT
 
 <a href="https://www.dita-ot.org"><img src="https://www.dita-ot.org/images/dita-ot-logo.svg" align="right" height="55"></a>
 
@@ -83,7 +83,7 @@ rm dita-ot-3.3.4.zip
 ```
 
 
-## Installing the Spelling and Grammar Checker Plug-in
+### Installing the Spelling and Grammar Checker Plug-in
 
 -   Run the plug-in installation commands:
 
@@ -97,13 +97,13 @@ The `dita` command line tool requires no additional configuration.
 
 ---
 
-# Usage
+## Usage
 
-## Spell-checking a document from the command line
+### Spell-checking a document from the command line
 
 A test document can be found within the plug-in at: `PATH_TO_DITA_OT/plugins/com.here.validate.svrl.text-rules/sample`
 
-### Creating an SVRL file
+#### Creating an SVRL file
 
 To create an SVRL file with the spell-checker plug-in use the `text-rules` transform with the
 `--args.validate.mode=report` parameter.
@@ -137,7 +137,7 @@ Once the command has run, an `SVRL` file is created:
 </svrl:schematron-output>
 ```
 
-### Echoing results to the command line
+#### Echoing results to the command line
 
 To echo results to the command line with the spell-checker plug-in use the `text-rules` transform without specifying a
 `report`
@@ -168,7 +168,7 @@ Found 1 Errors 0 Warnings
 Error: [SVRL001F][FATAL] Error: Errors detected during validation
 ```
 
-### Auto-correction from the command line
+#### Auto-correction from the command line
 
 To auto-correct spelling mistakes with the spell-checker plug-in use the `auto-correct` transform.
 
@@ -200,7 +200,7 @@ Once the command has run spelling mistakes will have been removed from the docum
 -   `text-rules.ruleset.file` - Specifies severity of the rules to apply. If this parameter is not present, default
     severity levels will be used.
 
-## Spell-checking a document from the using ANT
+### Spell-checking a document from the using ANT
 
 An ANT build file is supplied in the same directory as the sample document. The main target can be seen below:
 
@@ -231,9 +231,9 @@ An ANT build file is supplied in the same directory as the sample document. The 
 </target>
 ```
 
-# Configuring the plug-in
+## Configuring the plug-in
 
-## Internationalization
+### Internationalization
 
 The spelling and grammar checker currently supports three languages:
 
@@ -252,7 +252,7 @@ only been supplied for `en`.
 
 Additional languages can be added by creating a new language folder and files under `cfg/dictionary`
 
-## Adding new mis-spellings to the plug-in
+### Adding new mis-spellings to the plug-in
 
 The list of misspelt words to check when spell-checking can be altered by amending entries in the xml files under
 `cfg/dictionary`. The plug-in recognizes four types of errors:
@@ -279,7 +279,7 @@ Each entry takes the form of a pair
 </entry>
 ```
 
-## Altering the severity of a validator rule
+### Altering the severity of a validator rule
 
 The severity of a validator rule can be altered by amending entries in the `cfg/ruleset/default.xml` file The plug-in
 supports four severity levels:
@@ -296,14 +296,14 @@ A custom ruleset file can be passed into the plug-in using the `text-rules.rules
 PATH_TO_DITA_OT/bin/dita -f text-rules-echo -i document.ditamap --text-rules.ruleset.file=PATH_TO_CUSTOM/ruleset.xml
 ```
 
-## Ignoring Validator Rules
+### Ignoring Validator Rules
 
-### Removing a rule globally
+#### Removing a rule globally
 
 Rules can be made inactive by altering the severity (see above). Alternatively a rule can be commented out in the XSL
 configuration file.
 
-### Ignoring a rule throughout a document
+#### Ignoring a rule throughout a document
 
 Individual rules can be ignored by passing the `args.validate.ignore.rules` parameter to the command line. The value of
 the parameter should be a comma-delimited list of each `rule-id` to ignore.
@@ -314,7 +314,7 @@ For example to ignore the `latin-abbreviation` validation rule within a document
 PATH_TO_DITA_OT/dita -f text-rules-echo -i document.ditamap -Dargs.validate.ignore.rules=latin-abbreviation
 ```
 
-### Ignoring a specific instance of a rule
+#### Ignoring a specific instance of a rule
 
 Specific instances of a rule can be ignored by adding a comment within the `*.dita` file. The comment should start with
 `ignore-rule` and needs to be added at the location where the error is flagged.
@@ -329,7 +329,7 @@ Specific instances of a rule can be ignored by adding a comment within the `*.di
 </p>
 ```
 
-### Ignoring all warnings/errors within a block of text
+#### Ignoring all warnings/errors within a block of text
 
 -   A block of DITA can be excluded from firing all rules at **WARNING** level by adding the comment
     `ignore-all-warnings` to the block.
@@ -339,7 +339,7 @@ Specific instances of a rule can be ignored by adding a comment within the `*.di
 
 -   Rules set at **FATAL** level cannot be ignored.
 
-# Sample Document
+## Sample Document
 
 A sample document can be found within the plug-in which can used to test plug-in rules. The document covers both
 positive and negative test cases. The sample document contains valid DITA which can be built as an HTML or as a PDF
@@ -355,7 +355,10 @@ The `<topic>` files are sorted as follows:
 -   The text-rules DITA-OT plugin (`com.here.validate.svrl.text-rules`) - This `<chapter>` contains a set of English
     language spelling and grammar rules.
 
-# Spell-checker Error Messages
+<a name="spell-checker-error-messages"/>
+
+<details>
+<summary><strong>Spell-checker Error Messages</strong></summary>
 
 The following table list the spell-checker error messages by message ID.
 
@@ -375,11 +378,13 @@ The following table list the spell-checker error messages by message ID.
 | split-inifinitive        | The phrase '\{phrase\}' is written using a split-infinitive in the following text: | The indicated sentence includes a split-infinitive, which is considered poor grammatical style - consider rephrasing the sentence.        |
 | where-not-were           | The word 'were' has been used to start a subordinate clause in the following text: | The indicated sentence does not make sense. Rewrite the phrase using the correct grammar.                                                 |
 
-# Contribute
+</details>
+
+## Contribute
 
 PRs accepted.
 
-# License
+## License
 
 [Apache 2.0](LICENSE) © 2018-2019 HERE Europe B.V.
 
