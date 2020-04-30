@@ -31,7 +31,7 @@
 
 			For efficiency, run XSLT Validation against modified files only, if requested.
 		-->
-		<xslt  extension=".svrl" style="${dita.plugin.com.here.validate.svrl.text-rules.dir}/xsl/dita2svrl.xsl"  destdir="${dita.temp.dir}/svrl/text-rules" useImplicitFileset="false" failOnError="false"
+		<xslt  extension=".svrl.xml" style="${dita.plugin.com.here.validate.svrl.text-rules.dir}/xsl/dita2svrl.xsl"  destdir="${dita.temp.dir}/svrl/text-rules" useImplicitFileset="false" failOnError="false"
 		 >
 		 	
 			<xmlcatalog refid="dita.catalog"/>
