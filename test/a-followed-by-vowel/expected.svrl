@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<svrl:schematron-output xmlns:svrl="http://purl.oclc.org/dsdl/svrl">
+  <failed-assert location="/topic/body[1]/section[2]/p[1]" role="warning">
+    <diagnostic-reference diagnostic="a-followed-by-vowel">Line 17: p - [a-followed-by-vowel] 
+In the following text, change 'a' to 'an' where appropriate:
+
+a ant.</diagnostic-reference>
+  </failed-assert>
+</svrl:schematron-output>
+

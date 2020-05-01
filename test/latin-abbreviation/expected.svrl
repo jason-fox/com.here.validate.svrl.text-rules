@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<svrl:schematron-output xmlns:svrl="http://purl.oclc.org/dsdl/svrl">
+  <failed-assert location="/topic/body[1]/section[2]/p[1]" role="warning">
+    <diagnostic-reference diagnostic="latin-abbreviation">Line 17: p - [latin-abbreviation] 
+This &lt;p&gt; element contains a latinate abbreviation (i.e, e.g). Consider removing it. 
+
+e.g. don't write accronyms i.e. latinisms.</diagnostic-reference>
+  </failed-assert>
+</svrl:schematron-output>
+
