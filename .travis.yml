@@ -15,7 +15,7 @@ addons:
       secure: "OJqqmsagzwT7PRvPy+PlfQ8Fmv/dzMcSG6Egnk8qmnZtpmgOGx5jPFMaq1cPPUW1HMdVRktZIt75KXg0mR9sCAsf6uL4sBPTRKuL/+7JOauZhwyBDwwYmQv/pOoPW4voEXreEWUW4K6homXpHHiGAOXYzTI8MNAZvXxQWqQNbOGznqb63z0Sa6BXhrvUf1wBsXgcfrB3AM7Qba+FVUTDHBThwNjxRALlk6qw2n6nzYlZXC/5SxriGeypifGlHyoJ3dV9hDgIJrfoPhzre4Sgq3q881+OYLGn7KrMFctmo+SEtROlW6EhaEtvGd05DXcH18pRTqTIb/Ns87/Kb/s2mV7bpA14Ma3ApyDjS0tHRE/e/mKAPUiufky2Ct0nFSCxhG9dz58xqJEVUbEgCH3Tx9arVE0yjxQI2lpWKHm5BgqF49WZjFtsO8qrWMiYN0WgqbMMSWIfqj03927rsWR3eQEnsPKusv1s6w7K+P3MywFJU8JNtd9e3AdZGDPzKomnJtjAHBP90DVxuJW41OtOQGGzZ0n8A9MlcswM/ZSSzNNCeeNZm0RzmMNKoxoZNzFy9HLtV7G80L5R5ZAy4LZJ84/iM26blhuNy+QbyV85Yj9QRKxU//9NYwRAug63hguRLjoDnTovZP0xPFqR/DLnUXVtqvhqtHTBzmkbwjSiBVg="
 
 env:
-  - DITA_OT=3.5
+  - DITA_OT=3.5.1
   
 before_install:
   - zip -r com.here.validate.svrl.text-rules.zip . -x *.zip* *.git/* *temp/* *out/*
