@@ -2,7 +2,7 @@
 
 [![license](https://img.shields.io/github/license/jason-fox/com.here.validate.svrl.text-rules.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 [![DITA-OT 3.5](https://img.shields.io/badge/DITA--OT-3.5-blue.svg)](http://www.dita-ot.org/3.5)
-[![Build Status](https://api.travis-ci.com/jason-fox/com.here.validate.svrl.text-rules.svg?branch=master)](https://travis-ci.com/github/jason-fox/com.here.validate.svrl.text-rules)
+[![CI](https://github.com/jason-fox/com.here.validate.svrl.text-rules/workflows/CI/badge.svg)](https://github.com/jason-fox/com.here.validate.svrl.text-rules/actions?query=workflow%3ACI)
 [![Coverage Status](https://coveralls.io/repos/github/jason-fox/com.here.validate.svrl.text-rules/badge.svg?branch=master)](https://coveralls.io/github/jason-fox/com.here.validate.svrl.text-rules?branch=master)
 [![Documentation Status](https://readthedocs.org/projects/textlintdita-ot/badge/?version=latest)](https://textlintdita-ot.readthedocs.io/en/latest/?badge=latest)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=com.here.validate.svrl.text-rules&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.here.validate.svrl.text-rules)
