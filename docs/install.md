@@ -9,17 +9,19 @@ Installing DITA-OT
 
 The spell-checker is a plug-in for the DITA open toolkit. Futhermore, it is not a stand alone plug-in as it extends the **base validator plug-in** ([`com.here.validate.svrl`](https://github.com/jason-fox/com.here.validate.svrl)).
 
--  Full installation instructions for downloading DITA-OT can be found [here](https://www.dita-ot.org/3.2/topics/installing-client.html).
+-   Full installation instructions for downloading DITA-OT can be found
+    [here](https://www.dita-ot.org/3.6/topics/installing-client.html).
 
-    1.  Download the `dita-ot-3.2.zip` package from the project website at [dita-ot.org/download](https://www.dita-ot.org/download)
+    1.  Download the `dita-ot-3.6.zip` package from the project website at
+        [dita-ot.org/download](https://www.dita-ot.org/download)
     2.  Extract the contents of the package to the directory where you want to install DITA-OT.
-    3.  **Optional**: Add the absolute path for the `bin` directory to the _PATH_ system variable.
-This defines the necessary environment variable to run the `dita` command from the command line.
+    3.  **Optional**: Add the absolute path for the `bin` directory to the _PATH_ system variable. This defines the
+        necessary environment variable to run the `dita` command from the command line.
 
 ```bash
-curl -LO https://github.com/dita-ot/dita-ot/releases/download/3.2/dita-ot-3.2.zip
-unzip -q dita-ot-3.2.zip
-rm dita-ot-3.2.zip
+curl -LO https://github.com/dita-ot/dita-ot/releases/download/3.6/dita-ot-3.6.zip
+unzip -q dita-ot-3.6.zip
+rm dita-ot-3.6.zip
 ```
 
 Installing the Base Validator Plug-in
@@ -27,7 +29,7 @@ Installing the Base Validator Plug-in
 
 -  Run the plug-in installation command:
 
-```console
+```bash
 dita -install https://github.com/jason-fox/com.here.validate.svrl/archive/master.zip
 ```
 
@@ -36,7 +38,7 @@ Installing the Spelling and Grammar Checker Plug-in
 
 -  Run the plug-in installation command:
 
-```console
+```bash
 dita -install https://github.com/jason-fox/com.here.validate.svrl.text-rules/archive/master.zip
 ```
 
