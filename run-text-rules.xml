@@ -55,7 +55,6 @@
 			<param name="DUPLICATES_REGEX" expression="${duplicates.regex}" if="duplicates.regex" />
 			<param name="SPELLING_REGEX" expression="${spelling.regex}" if="spelling.regex" />
 			<param name="PUNCTUATION_REGEX" expression="${punctuation.regex}" if="punctuation.regex" />
-			<param name="DEFAULTLANG" expression="${document.language}" if="document.language" />
 			<param name="AUTO_CORRECT" expression="${text-rules.auto-correct}" if="text-rules.auto-correct"/>
 
 			<!-- Parameters for the textual-rules template from the base plug-in -->

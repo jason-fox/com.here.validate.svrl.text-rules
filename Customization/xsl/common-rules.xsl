@@ -4,7 +4,7 @@
 	See the accompanying LICENSE file for applicable licenses.
 -->
 <xsl:stylesheet version="2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:variable name="LANGUAGE_CODE" select="substring($DEFAULTLANG, 1, 2)"/>
+	<xsl:variable name="LANGUAGE_CODE" select="substring($defaultLanguage, 1, 2)"/>
 	<xsl:variable as="xs:boolean" name="INCLUDE_META" select="$AUTO_CORRECT='true'"/>
 	<!-- Apply Rules which apply to all nodes  -->
 	<xsl:template match="*" mode="common-pattern">
