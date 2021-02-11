@@ -84,7 +84,7 @@
 		<!-- Decide the severity of each type of error -->
 		<get-validation-rulesets file="${text-rules.ruleset.file}" fatal="text-rules.fatal" error="text-rules.error" warning="text-rules.warning"/>
 
-		 <java classname="org.apache.tools.ant.launch.Launcher" fork="true" failonerror="true" classpathref="svrl.classpath" outputproperty="text-rules.output">
+		 <java classname="org.apache.tools.ant.launch.Launcher" fork="true" failonerror="false" classpathref="svrl.classpath" outputproperty="text-rules.output" resultproperty="text-rules.result">
 			<arg value="-Ddita.dir=${dita.dir}"/>
 			<arg value="-buildfile"/>
 			<arg value="${dita.plugin.com.here.validate.svrl.text-rules.dir}/run-text-rules.xml"/>
@@ -96,7 +96,6 @@
 			<arg value="-Dduplicates.txt=${duplicates.txt}"/>
 			<arg value="-Dspelling.txt=${spelling.txt}"/>
 			<arg value="-Dpunctuation.txt=${punctuation.txt}"/>
-			<arg value="-Ddocument.language=${document.language}"/>
 			<arg value="-Dtext-rules.auto-correct=${text-rules.auto-correct}"/>
 
 			<!-- Parameters for the textual-rules template from the base plug-in -->
@@ -112,6 +111,15 @@
 			<arg value="-Dargs.validate.cachefile=${args.validate.cachefile}"/>
 		</java>
 		<echo taskname="dita-ot" level="verbose" message="${text-rules.output}"/>
+
+
+		<dita-ot-fail id="SVRL001F">
+	      <condition>
+	        <not>
+	          <equals arg1="${text-rules.result}" arg2="0"/>
+	        </not>
+	      </condition>
+	    </dita-ot-fail>
 	</target>
 
 

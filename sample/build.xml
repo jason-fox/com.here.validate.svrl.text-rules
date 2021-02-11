@@ -38,8 +38,6 @@
 			<arg value="dita --input ${args.input} --output ${dita.dir}/out/html --format html5 -Dargs.grammar.cache=yes -Dgenerate-debug-attributes=false -Dargs.artlbl=no -Dargs.csspath=css -Dargs.xhtml.classattr=no -Dargs.xhtml.toc=toc"/>
 		</exec>
 
-		
-
 	</target>
 
 	<!--
