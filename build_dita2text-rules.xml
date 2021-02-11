@@ -86,6 +86,7 @@
 
 		 <java classname="org.apache.tools.ant.launch.Launcher" fork="true" failonerror="false" classpathref="svrl.classpath" outputproperty="text-rules.output" resultproperty="text-rules.result">
 			<arg value="-Ddita.dir=${dita.dir}"/>
+			<arg value="-Ddita.plugin.org.dita.base.dir=${dita.plugin.org.dita.base.dir}"/>
 			<arg value="-buildfile"/>
 			<arg value="${dita.plugin.com.here.validate.svrl.text-rules.dir}/run-text-rules.xml"/>
 			<arg value="-Ddita.plugin.com.here.validate.svrl.text-rules.dir=${dita.plugin.com.here.validate.svrl.text-rules.dir}"/>
