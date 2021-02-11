@@ -62,6 +62,7 @@
 			<param name="CHECK_CASE" expression="${args.validate.check.case}"/>
 			<!-- Common parameters for the schematron template from the base plug-in -->
 			<param name="SOURCE" expression="${dita.temp.dir}/dita"/>
+			<param expression="${default.language}" if="default.language" name="defaultLanguage"/>
 			<param name="OUTPUT_RULE-ID" expression="${com.here.validate.svrl.output.rule-id}"/>
 			<param name="IGNORE_RULES" expression="${args.validate.ignore.rules}"/>
 			<param name="FATAL_RULESET" expression="${text-rules.fatal}"/>
