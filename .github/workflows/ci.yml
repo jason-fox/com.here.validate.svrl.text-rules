@@ -34,6 +34,8 @@ jobs:
         with:
           dita-ot-version: 3.6
           plugin: 'com.here.validate.text-rules'
-          prerequisites: https://github.com/jason-fox/com.here.validate.svrl/archive/master.zip
+          prerequisites: |
+            org.doctales.xmltask
+            https://github.com/jason-fox/com.here.validate.svrl/archive/master.zip
         env:
           COVERALLS_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
