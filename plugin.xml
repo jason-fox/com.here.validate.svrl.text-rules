@@ -12,16 +12,14 @@
 
 
 	<!-- Transtype definitions -->
-	<transtype name="auto-correct" abstract="false" extends="svrl"
-		 desc="DITA Spelling auto-correction">
+	<transtype name="auto-correct" abstract="false" extends="svrl" desc="DITA Spelling auto-correction">
 		<param desc="Whether to colorize the validation output" name="args.validate.color" type="enum">
 			<val default="true" desc="Output highlights errors and warnings using ANSI color codes">true</val>
 			<val desc="Output does not highlight errors and warnings">false</val>
 		</param>
 		<param name="text-rules.ruleset.file" desc="Specifies the ruleset file to use." type="file"/>
 	</transtype>
-	<transtype name="text-rules" abstract="false" extends="svrl"
-		 desc="DITA Spelling and grammar checking">
+	<transtype name="text-rules" abstract="false" extends="svrl" desc="DITA Spelling and grammar checking">
 		<param desc="Validation Mode" name="args.validate.mode" type="enum">
 			<val desc="Outputs errors and warnings. Fails on errors and warnings.">strict</val>
 			<val default="true" desc="Outputs errors and warnings. Fails on errors only">default</val>

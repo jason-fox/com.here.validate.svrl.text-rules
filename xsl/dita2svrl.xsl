@@ -15,7 +15,14 @@
 
 	http://standards.iso.org/ittf/PubliclyAvailableStandards/index.html
 -->
-<xsl:stylesheet exclude-result-prefixes="dita-ot" version="2.0" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet
+  exclude-result-prefixes="dita-ot"
+  version="2.0"
+  xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
 	<xsl:import href="plugin:com.here.validate.svrl:xsl/schematron.xsl"/>
 	<xsl:import href="plugin:com.here.validate.svrl:Customization/xsl/textual-rules.xsl"/>
 	<!--PROLOG-->
@@ -32,7 +39,13 @@
 	<xsl:param as="xs:string" name="AUTO_CORRECT" select="'false'"/>
 	<xsl:include href="../Customization/xsl/common-rules.xsl"/>
 	<xsl:include href="../Customization/xsl/en/grammar.xsl"/>
-	<xsl:output indent="yes" method="xml" omit-xml-declaration="no" standalone="yes" xmlns:svrl="http://purl.oclc.org/dsdl/svrl"/>
+	<xsl:output
+    indent="yes"
+    method="xml"
+    omit-xml-declaration="no"
+    standalone="yes"
+    xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+  />
 	<xsl:template match="/">
 		<!--SCHEMA SETUP-->
 		<schematron-output schemaVersion="1.5" title="DITA text-rules Validation" xmlns:svrl="http://purl.oclc.org/dsdl/svrl">

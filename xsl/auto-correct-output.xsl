@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 <!--
 	This file is part of the Spelling and Grammar Checker project.
 	See the accompanying LICENSE file for applicable licenses.

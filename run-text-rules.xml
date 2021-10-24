@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><!--ant-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!--ant-->
 <!--
   This file is part of the Spelling and Grammar Checker project.
   See the accompanying LICENSE file for applicable licenses.
@@ -31,8 +32,7 @@
 
 			For efficiency, run XSLT Validation against modified files only, if requested.
 		-->
-		<xslt  extension=".svrl.xml" style="${dita.plugin.com.here.validate.svrl.text-rules.dir}/xsl/dita2svrl.xsl"  destdir="${dita.temp.dir}/svrl/text-rules" useImplicitFileset="false" failOnError="false"
-		 >
+		<xslt extension=".svrl.xml" style="${dita.plugin.com.here.validate.svrl.text-rules.dir}/xsl/dita2svrl.xsl" destdir="${dita.temp.dir}/svrl/text-rules" useImplicitFileset="false" failOnError="false">
 		 	
 			<xmlcatalog refid="dita.catalog"/>
 			<factory name="net.sf.saxon.TransformerFactoryImpl">
@@ -52,9 +52,9 @@
 			<!-- Custom parameters for text-rules -->
 			<param name="DICTIONARY_DIR" expression="${text-rules.xml.path.unix}"/>
 			<param name="GRAMMAR_REGEX" expression="${grammar.regex}" if="grammar.regex"/>
-			<param name="DUPLICATES_REGEX" expression="${duplicates.regex}" if="duplicates.regex" />
-			<param name="SPELLING_REGEX" expression="${spelling.regex}" if="spelling.regex" />
-			<param name="PUNCTUATION_REGEX" expression="${punctuation.regex}" if="punctuation.regex" />
+			<param name="DUPLICATES_REGEX" expression="${duplicates.regex}" if="duplicates.regex"/>
+			<param name="SPELLING_REGEX" expression="${spelling.regex}" if="spelling.regex"/>
+			<param name="PUNCTUATION_REGEX" expression="${punctuation.regex}" if="punctuation.regex"/>
 			<param name="AUTO_CORRECT" expression="${text-rules.auto-correct}" if="text-rules.auto-correct"/>
 
 			<!-- Parameters for the textual-rules template from the base plug-in -->

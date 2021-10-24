@@ -3,7 +3,11 @@
 	This file is part of the Spelling and Grammar Checker project.
 	See the accompanying LICENSE file for applicable licenses.
 -->
-<xsl:stylesheet version="2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet
+  version="2.0"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
 	<xsl:variable name="LANGUAGE_CODE" select="substring($defaultLanguage, 1, 2)"/>
 	<xsl:variable as="xs:boolean" name="INCLUDE_META" select="$AUTO_CORRECT='true'"/>
 	<!-- Apply Rules which apply to all nodes  -->
@@ -20,7 +24,9 @@
 		<!--
 			The following rules apply to the default language only.
 		-->
-		<xsl:if test="(not(@xml:lang or ancestor::*[@xml:lang]/@xml:lang) or ((starts-with(@xml:lang,'$LANGUAGE_CODE'))  or (starts-with(ancestor::*[@xml:lang]/@xml:lang,'$LANGUAGE_CODE'))) )">
+		<xsl:if
+      test="(not(@xml:lang or ancestor::*[@xml:lang]/@xml:lang) or ((starts-with(@xml:lang,'$LANGUAGE_CODE'))  or (starts-with(ancestor::*[@xml:lang]/@xml:lang,'$LANGUAGE_CODE'))) )"
+    >
 			<xsl:call-template name="fired-rule">
 				<xsl:with-param name="context">default-lang</xsl:with-param>
 				<xsl:with-param name="role">spelling</xsl:with-param>
@@ -36,7 +42,9 @@
 
 		<!-- The following additional rules apply to the English language only -->
 		<xsl:if test="$LANGUAGE_CODE='en'">
-			<xsl:if test="(not(@xml:lang or ancestor::*[@xml:lang]/@xml:lang) or ((starts-with(@xml:lang,'en'))  or (starts-with(ancestor::*[@xml:lang]/@xml:lang,'en'))) )">
+			<xsl:if
+        test="(not(@xml:lang or ancestor::*[@xml:lang]/@xml:lang) or ((starts-with(@xml:lang,'en'))  or (starts-with(ancestor::*[@xml:lang]/@xml:lang,'en'))) )"
+      >
 				<xsl:call-template name="fired-rule">
 					<xsl:with-param name="context">english</xsl:with-param>
 					<xsl:with-param name="role">grammar</xsl:with-param>
@@ -67,7 +75,9 @@
 
 			 sentence-capitalization - Sentences must start with a capital letter
 		-->
-		<xsl:if test="not(./keyword) and matches($running-text,'\w\w\.\s+[a-z]') and not(matches($running-text,'((i\.e)|(e\.g))\.|etc\.'))">
+		<xsl:if
+      test="not(./keyword) and matches($running-text,'\w\w\.\s+[a-z]') and not(matches($running-text,'((i\.e)|(e\.g))\.|etc\.'))"
+    >
 			<xsl:call-template name="failed-assert">
 				<xsl:with-param name="rule-id">sentence-capitalization</xsl:with-param>
 				<xsl:with-param name="test">matches($running-text, ,'i') </xsl:with-param>

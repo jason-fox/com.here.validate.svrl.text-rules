@@ -59,7 +59,9 @@
 		<!--
 			 split-infinitive - In English, use of split infinitives is considered poor writing style
 		-->
-		<xsl:if test="matches($running-text,'(T|\st)o\s+\w+ly\s','i') and not(matches($running-text,'(app|comp|Ita|on|re|supp)ly', 'i'))">
+		<xsl:if
+      test="matches($running-text,'(T|\st)o\s+\w+ly\s','i') and not(matches($running-text,'(app|comp|Ita|on|re|supp)ly', 'i'))"
+    >
 			<xsl:call-template name="failed-assert">
 				<xsl:with-param name="rule-id">split-infinitive</xsl:with-param>
 				<xsl:with-param name="test">matches($running-text, '(?![app|comp|Ita|on|re|supp)([a-z]*)ly ', 'i')</xsl:with-param>
