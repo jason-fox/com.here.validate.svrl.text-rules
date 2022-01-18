@@ -22,8 +22,18 @@
 			<param name="1" value="Auto correcting document Files"/>
 		</dita-ot-echo>
 
-		<tempfile destdir="${dita.temp.dir}" property="auto-correct.xml" suffix=".xml" deleteonexit="true"/>
-		<xslt basedir="${svrl.dir}" style="${dita.plugin.com.here.validate.svrl.text-rules.dir}/xsl/auto-correct-output.xsl" in="${output.dir}/${svrl.filename.root}.svrl" out="${auto-correct.xml}">
+		<tempfile
+      destdir="${dita.temp.dir}"
+      property="auto-correct.xml"
+      suffix=".xml"
+      deleteonexit="true"
+    />
+		<xslt
+      basedir="${svrl.dir}"
+      style="${dita.plugin.com.here.validate.svrl.text-rules.dir}/xsl/auto-correct-output.xsl"
+      in="${output.dir}/${svrl.filename.root}.svrl"
+      out="${auto-correct.xml}"
+    >
 		</xslt>
 
 		<ant antfile="${auto-correct.xml}">
@@ -38,27 +48,73 @@
 		<!--
 			Use the default severity for each rule unless an override has been set.
 		-->
-		<property name="text-rules.ruleset.file" value="${dita.plugin.com.here.validate.svrl.text-rules.dir}/cfg/ruleset/default.xml"/>
+		<property
+      name="text-rules.ruleset.file"
+      value="${dita.plugin.com.here.validate.svrl.text-rules.dir}/cfg/ruleset/default.xml"
+    />
 
 		<!--
 			Load a set of mistakes and corrections from a set of dictionary files.
 			The plugin provides en, fr and de only
 		 -->
-		<property name="text-rules.dictionary.dir" location="${dita.plugin.com.here.validate.svrl.text-rules.dir}/cfg/dictionary/${default.language}"/>
+		<property
+      name="text-rules.dictionary.dir"
+      location="${dita.plugin.com.here.validate.svrl.text-rules.dir}/cfg/dictionary/${default.language}"
+    />
 
-		<tempfile destdir="${dita.temp.dir}" property="grammar.txt" suffix=".txt" deleteonexit="true"/>
-		<tempfile destdir="${dita.temp.dir}" property="duplicates.txt" suffix=".txt" deleteonexit="true"/>
-		<tempfile destdir="${dita.temp.dir}" property="spelling.txt" suffix=".txt" deleteonexit="true"/>
-		<tempfile destdir="${dita.temp.dir}" property="punctuation.txt" suffix=".txt" deleteonexit="true"/>
+		<tempfile
+      destdir="${dita.temp.dir}"
+      property="grammar.txt"
+      suffix=".txt"
+      deleteonexit="true"
+    />
+		<tempfile
+      destdir="${dita.temp.dir}"
+      property="duplicates.txt"
+      suffix=".txt"
+      deleteonexit="true"
+    />
+		<tempfile
+      destdir="${dita.temp.dir}"
+      property="spelling.txt"
+      suffix=".txt"
+      deleteonexit="true"
+    />
+		<tempfile
+      destdir="${dita.temp.dir}"
+      property="punctuation.txt"
+      suffix=".txt"
+      deleteonexit="true"
+    />
 
 
-		<xslt style="${dita.plugin.com.here.validate.svrl.text-rules.dir}/xsl/dictionary2regex.xsl" in="${text-rules.dictionary.dir}/grammar.xml" out="${grammar.txt}" failOnError="false">
+		<xslt
+      style="${dita.plugin.com.here.validate.svrl.text-rules.dir}/xsl/dictionary2regex.xsl"
+      in="${text-rules.dictionary.dir}/grammar.xml"
+      out="${grammar.txt}"
+      failOnError="false"
+    >
 		</xslt>
-		<xslt style="${dita.plugin.com.here.validate.svrl.text-rules.dir}/xsl/dictionary2regex.xsl" in="${text-rules.dictionary.dir}/duplicates.xml" out="${duplicates.txt}" failOnError="false">
+		<xslt
+      style="${dita.plugin.com.here.validate.svrl.text-rules.dir}/xsl/dictionary2regex.xsl"
+      in="${text-rules.dictionary.dir}/duplicates.xml"
+      out="${duplicates.txt}"
+      failOnError="false"
+    >
 		</xslt>
-		<xslt style="${dita.plugin.com.here.validate.svrl.text-rules.dir}/xsl/dictionary2regex.xsl" in="${text-rules.dictionary.dir}/spelling.xml" out="${spelling.txt}" failOnError="false">
+		<xslt
+      style="${dita.plugin.com.here.validate.svrl.text-rules.dir}/xsl/dictionary2regex.xsl"
+      in="${text-rules.dictionary.dir}/spelling.xml"
+      out="${spelling.txt}"
+      failOnError="false"
+    >
 		</xslt>
-		<xslt style="${dita.plugin.com.here.validate.svrl.text-rules.dir}/xsl/dictionary2regex.xsl" in="${text-rules.dictionary.dir}/punctuation.xml" out="${punctuation.txt}" failOnError="false">
+		<xslt
+      style="${dita.plugin.com.here.validate.svrl.text-rules.dir}/xsl/dictionary2regex.xsl"
+      in="${text-rules.dictionary.dir}/punctuation.xml"
+      out="${punctuation.txt}"
+      failOnError="false"
+    >
 			<param name="PREFIX" expression="("/>
 			<param name="POSTFIX" expression=")"/>
 		</xslt>
@@ -80,19 +136,39 @@
 			<pathelement location="${text-rules.dictionary.dir}"/>
 		</path>
 
-		<pathconvert targetos="unix" property="text-rules.xml.path.unix" refid="text-rules.xml.path">
+		<pathconvert
+      targetos="unix"
+      property="text-rules.xml.path.unix"
+      refid="text-rules.xml.path"
+    >
 			<map from="c:" to=""/>
 		</pathconvert>
 
 		<!-- Decide the severity of each type of error -->
-		<get-validation-rulesets file="${text-rules.ruleset.file}" fatal="text-rules.fatal" error="text-rules.error" warning="text-rules.warning"/>
+		<get-validation-rulesets
+      file="${text-rules.ruleset.file}"
+      fatal="text-rules.fatal"
+      error="text-rules.error"
+      warning="text-rules.warning"
+    />
 
-		 <java classname="org.apache.tools.ant.launch.Launcher" fork="true" failonerror="false" classpathref="svrl.classpath" outputproperty="text-rules.output" resultproperty="text-rules.result">
+		 <java
+      classname="org.apache.tools.ant.launch.Launcher"
+      fork="true"
+      failonerror="false"
+      classpathref="svrl.classpath"
+      outputproperty="text-rules.output"
+      resultproperty="text-rules.result"
+    >
 			<arg value="-Ddita.dir=${dita.dir}"/>
 			<arg value="-Ddita.plugin.org.dita.base.dir=${dita.plugin.org.dita.base.dir}"/>
 			<arg value="-buildfile"/>
-			<arg value="${dita.plugin.com.here.validate.svrl.text-rules.dir}/run-text-rules.xml"/>
-			<arg value="-Ddita.plugin.com.here.validate.svrl.text-rules.dir=${dita.plugin.com.here.validate.svrl.text-rules.dir}"/>
+			<arg
+        value="${dita.plugin.com.here.validate.svrl.text-rules.dir}/run-text-rules.xml"
+      />
+			<arg
+        value="-Ddita.plugin.com.here.validate.svrl.text-rules.dir=${dita.plugin.com.here.validate.svrl.text-rules.dir}"
+      />
 			<arg value="-Ddita.temp.dir=${dita.temp.dir}"/>
 			<arg value="-Ddefault.language=${default.language}"/>
 			<arg value="-Dtext-rules.xml.path.unix=${text-rules.xml.path.unix}"/>
@@ -107,7 +183,9 @@
 			<arg value="-Dargs.validate.check.case=${args.validate.check.case}"/>
 			<!-- Common parameters for the schematron template from the base plug-in -->
 
-			<arg value="-Dcom.here.validate.svrl.output.rule-id=${com.here.validate.svrl.output.rule-id}"/>
+			<arg
+        value="-Dcom.here.validate.svrl.output.rule-id=${com.here.validate.svrl.output.rule-id}"
+      />
 			<arg value="-Dargs.validate.ignore.rules=${args.validate.ignore.rules}"/>
 			<arg value="-Dtext-rules.fatal=${text-rules.fatal}"/>
 			<arg value="-Dtext-rules.error=${text-rules.error}"/>
@@ -130,11 +208,17 @@
 	<!--
 		ANT target executed to create an SVRL file holding a list of spelling errors
 	-->
-	<target name="dita2text-rules" depends="text-rules.init, text-rules, svrl-merge, svrl-filter"/>
+	<target
+    name="dita2text-rules"
+    depends="text-rules.init, text-rules, svrl-merge, svrl-filter"
+  />
 
 	<!--
 		ANT target executed to remove spelling errors from a document.
 	-->
-	<target name="dita2auto-correct" depends="auto-correct.init, text-rules, svrl-merge, auto-correct"/>
+	<target
+    name="dita2auto-correct"
+    depends="auto-correct.init, text-rules, svrl-merge, auto-correct"
+  />
 
 </project>
