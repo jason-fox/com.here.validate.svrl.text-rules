@@ -3,7 +3,7 @@
 	This file is part of the Spelling and Grammar Checker project.
 	See the accompanying LICENSE file for applicable licenses.
 -->
-<vars>
+<variables>
 	<variable id="a-followed-by-vowel">In the following text, change 'a' to 'an' where appropriate:
 
 PARAM1.</variable>
@@ -37,4 +37,4 @@ PARAM1</variable>
 	<variable id="where-not-were">This &lt;@NAME&gt; element contains a sentence with a subordinate clause starting with the word 'were'. You might want to correct this to 'where'. 
 
 PARAM1</variable>
-</vars>
+</variables>

@@ -3,7 +3,7 @@
 	This file is part of the Spelling and Grammar Checker project.
 	See the accompanying LICENSE file for applicable licenses.
 -->
-<vars>
+<variables>
 	<variable id="a-followed-by-vowel">Ersetzen Sie 'a' durch 'an' im folgenden Englischen Text, falls angebracht: 
 
 PARAM1.</variable>
@@ -37,4 +37,4 @@ PARAM1</variable>
 	<variable id="where-not-were">Dieses &lt;@NAME&gt; Element enthält einen Nebensatz mit dem Wort 'were', das wahrscheinlich stattdessen 'where' lauten sollte. 
 
 PARAM1</variable>
-</vars>
+</variables>
