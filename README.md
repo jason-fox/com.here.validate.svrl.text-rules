@@ -4,7 +4,6 @@
 [![DITA-OT 4.0](https://img.shields.io/badge/DITA--OT-4.0-green.svg)](http://www.dita-ot.org/4.0)
 [![CI](https://github.com/jason-fox/com.here.validate.svrl.text-rules/workflows/CI/badge.svg)](https://github.com/jason-fox/com.here.validate.svrl.text-rules/actions?query=workflow%3ACI)
 [![Coverage Status](https://coveralls.io/repos/github/jason-fox/com.here.validate.svrl.text-rules/badge.svg?branch=master)](https://coveralls.io/github/jason-fox/com.here.validate.svrl.text-rules?branch=master)
-[![Documentation Status](https://readthedocs.org/projects/textlintdita-ot/badge/?version=latest)](https://textlintdita-ot.readthedocs.io/en/latest/?badge=latest)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=com.here.validate.svrl.text-rules&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.here.validate.svrl.text-rules)
 
 The Spelling and Grammar Checker [DITA-OT Plug-in](https://www.dita-ot.org/plugins) is an **extension** of the base
