@@ -4,7 +4,6 @@
 [![DITA-OT 4.0](https://img.shields.io/badge/DITA--OT-4.0-green.svg)](http://www.dita-ot.org/4.0)
 [![CI](https://github.com/jason-fox/com.here.validate.svrl.text-rules/workflows/CI/badge.svg)](https://github.com/jason-fox/com.here.validate.svrl.text-rules/actions?query=workflow%3ACI)
 [![Coverage Status](https://coveralls.io/repos/github/jason-fox/com.here.validate.svrl.text-rules/badge.svg?branch=master)](https://coveralls.io/github/jason-fox/com.here.validate.svrl.text-rules?branch=master)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=com.here.validate.svrl.text-rules&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.here.validate.svrl.text-rules)
 
 The Spelling and Grammar Checker [DITA-OT Plug-in](https://www.dita-ot.org/plugins) is an **extension** of the base
 [DITA Validator](https://github.com/jason-fox/com.here.validate.svrl) which adds simple rule-based **spelling and
@@ -384,6 +383,6 @@ PRs accepted.
 
 ## License
 
-[Apache 2.0](LICENSE) © 2018 - 2022 HERE Europe B.V.
+[Apache 2.0](LICENSE) © 2018 - 2026 HERE Europe B.V.
 
 See the [LICENSE](LICENSE) file in the root of this project for license details.
